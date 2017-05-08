@@ -1,0 +1,608 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <world name="default">
+    <!-- A global light source -->
+    <include>
+      <uri>model://sun</uri>
+    </include>
+
+    <model name="heightmap">
+      <static>true</static>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <heightmap>
+              <uri>file://media/dem/kruger_300.tif</uri>
+              <size>1500 1500 500</size>
+              <pos>0 0 0</pos>
+            </heightmap>
+          </geometry>
+        </collision>
+
+        <visual name="visual_abcedf">
+          <geometry>
+            <heightmap>
+              <texture>
+                <diffuse>file://media/materials/textures/dirt_diffusespecular.png</diffuse>
+                <normal>file://media/materials/textures/flat_normal.png</normal>
+                <size>1</size>
+              </texture>
+              <texture>
+                <diffuse>file://media/materials/textures/grass_diffusespecular.png</diffuse>
+                <normal>file://media/materials/textures/flat_normal.png</normal>
+                <size>1</size>
+              </texture>
+              <texture>
+                <diffuse>file://media/materials/textures/fungus_diffusespecular.png</diffuse>
+                <normal>file://media/materials/textures/flat_normal.png</normal>
+                <size>1</size>
+              </texture>
+              <blend>
+                <min_height>15</min_height>
+                <fade_dist>5</fade_dist>
+              </blend>
+              <blend>
+                <min_height>25</min_height>
+                <fade_dist>35</fade_dist>
+              </blend>
+              <uri>file://media/dem/kruger_150.tif</uri>
+              <size>1500 1500 500</size>
+              <pos>0 0 0</pos>
+            </heightmap>
+          </geometry>
+        </visual>
+
+      </link>
+    </model>
+
+  <!--model name='tree'>
+      <static>1</static>
+      <link name='link_tree'>
+        <pose>441.745 191.996 18.7659 1.5708 -0 0</pose>
+      <collision name='collision'>
+        <laser_retro>0</laser_retro>
+        <max_contacts>10</max_contacts>
+        <pose frame=''>441.745 191.996 18.7659 1.5708 -0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://tree/meshes/tree.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+        <visual name='visual'>
+          <cast_shadows>0</cast_shadows>
+          <transparency>0</transparency>
+          <geometry>
+            <mesh>
+              <uri>model://tree/meshes/tree.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+  </model-->
+
+  <!--population name="tree_population_xy1">
+  <model name='tree_1'>
+      <static>1</static>
+      <link name='link_tree'>
+        <pose>435.0 192.0 19.2 1.5708 -0 0</pose>
+      <collision name='collision'>
+        <laser_retro>0</laser_retro>
+        <max_contacts>10</max_contacts>
+        <pose frame=''>0 0 0.5 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://tree/meshes/tree.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+        <visual name='visual'>
+          <cast_shadows>0</cast_shadows>
+          <transparency>0</transparency>
+          <geometry>
+            <mesh>
+              <uri>model://tree/meshes/tree.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+  </model>
+  <pose>0 0 0 0 -0 0</pose>
+  <distribution>
+    <type>grid</type>
+    <rows>5</rows>
+    <cols>15</cols>
+    <step>0.5 0.5 0</step>
+  </distribution>
+  </population-->
+
+  <population name="tree_population_x1">
+  <model name='tree_1'>
+      <static>1</static>
+      <link name='link_tree'>
+        <pose>435.0 192.0 19.2 1.5708 -0 0</pose>
+      <collision name='collision'>
+        <laser_retro>0</laser_retro>
+        <max_contacts>10</max_contacts>
+        <pose frame=''>0 0 0.5 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://tree/meshes/tree.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+        <visual name='visual'>
+          <cast_shadows>0</cast_shadows>
+          <transparency>0</transparency>
+          <geometry>
+            <mesh>
+              <uri>model://tree/meshes/tree.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+  </model>
+  <pose>0 0 0 0 -0 0</pose>
+  <box>
+    <size>10 2 5</size>
+  </box>
+  <model_count>20</model_count>
+  <distribution>
+    <type>linear-x</type>
+  </distribution>
+  </population>
+
+  <!--population name="tree_population_xy1">
+  <model name='tree_1'>
+      <static>1</static>
+      <link name='link_tree'>
+        <pose>445.0 192.0 18.2 1.5708 0.0 3.1416</pose>
+      <collision name='collision'>
+        <laser_retro>0</laser_retro>
+        <max_contacts>10</max_contacts>
+        <pose frame=''>0 0 0.5 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://tree/meshes/tree.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+        <visual name='visual'>
+          <cast_shadows>0</cast_shadows>
+          <transparency>0</transparency>
+          <geometry>
+            <mesh>
+              <uri>model://tree/meshes/tree.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+  </model>
+  <pose>0 0 0 0 -0 0</pose>
+  <distribution>
+    <type>grid</type>
+    <rows>7</rows>
+    <cols>20</cols>
+    <step>0.5 0.5 0</step>
+  </distribution>
+  </population-->
+
+  <population name="tree_population_x2">
+  <model name='tree_1'>
+      <static>1</static>
+      <link name='link_tree'>
+        <pose>445.0 192.0 18.2 1.5708 0.0 3.1416</pose>
+      <collision name='collision'>
+        <laser_retro>0</laser_retro>
+        <max_contacts>10</max_contacts>
+        <pose frame=''>0 0 0.5 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://tree/meshes/tree.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+        <visual name='visual'>
+          <cast_shadows>0</cast_shadows>
+          <transparency>0</transparency>
+          <geometry>
+            <mesh>
+              <uri>model://tree/meshes/tree.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+  </model>
+  <pose>0 0 0 0 -0 0</pose>
+  <box>
+    <size>10 2 5</size>
+  </box>
+  <model_count>20</model_count>
+  <distribution>
+    <type>linear-x</type>
+  </distribution>
+  </population>
+
+  <population name="tree_population_x3">
+  <model name='tree_1'>
+      <static>1</static>
+      <link name='link_tree'>
+        <pose>455.0 192.0 17.2 1.5708 0.0 1.5708</pose>
+      <collision name='collision'>
+        <laser_retro>0</laser_retro>
+        <max_contacts>10</max_contacts>
+        <pose frame=''>0 0 0.5 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://tree/meshes/tree.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+        <visual name='visual'>
+          <cast_shadows>0</cast_shadows>
+          <transparency>0</transparency>
+          <geometry>
+            <mesh>
+              <uri>model://tree/meshes/tree.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+  </model>
+  <pose>0 0 0 0 -0 0</pose>
+  <box>
+    <size>10 2 5</size>
+  </box>
+  <model_count>20</model_count>
+  <distribution>
+    <type>linear-x</type>
+  </distribution>
+  </population>
+
+  <population name="tree_population_y1">
+  <model name='tree_1'>
+      <static>1</static>
+      <link name='link_tree'>
+        <pose>460.0 197.0 16.9 1.5708 0.0 1.5708</pose>
+      <collision name='collision'>
+        <laser_retro>0</laser_retro>
+        <max_contacts>10</max_contacts>
+        <pose frame=''>0 0 0.5 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://tree/meshes/tree.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+        <visual name='visual'>
+          <cast_shadows>0</cast_shadows>
+          <transparency>0</transparency>
+          <geometry>
+            <mesh>
+              <uri>model://tree/meshes/tree.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+  </model>
+  <pose>0 0 0 0 -0 0</pose>
+  <box>
+    <size>2 10 5</size>
+  </box>
+  <model_count>20</model_count>
+  <distribution>
+    <type>linear-y</type>
+  </distribution>
+  </population>
+
+  <population name="tree_population_y2">
+  <model name='tree_1'>
+      <static>1</static>
+      <link name='link_tree'>
+        <pose>460.0 209.0 17.4 1.5708 0.0 -1.5708</pose>
+      <collision name='collision'>
+        <laser_retro>0</laser_retro>
+        <max_contacts>10</max_contacts>
+        <pose frame=''>0 0 0.5 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://tree/meshes/tree.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+        <visual name='visual'>
+          <cast_shadows>0</cast_shadows>
+          <transparency>0</transparency>
+          <geometry>
+            <mesh>
+              <uri>model://tree/meshes/tree.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+  </model>
+  <pose>0 0 0 0 -0 0</pose>
+  <box>
+    <size>2 10 5</size>
+  </box>
+  <model_count>20</model_count>
+  <distribution>
+    <type>linear-y</type>
+  </distribution>
+  </population>
+
+
+  <population name="tree_population_y2_5">
+  <model name='tree_1'>
+      <static>1</static>
+      <link name='link_tree'>
+        <pose>460.0 203.0 17.0 1.5708 0.0 -3.1415</pose>
+      <collision name='collision'>
+        <laser_retro>0</laser_retro>
+        <max_contacts>10</max_contacts>
+        <pose frame=''>0 0 0.5 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://tree/meshes/tree.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+        <visual name='visual'>
+          <cast_shadows>0</cast_shadows>
+          <transparency>0</transparency>
+          <geometry>
+            <mesh>
+              <uri>model://tree/meshes/tree.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+  </model>
+  <pose>0 0 0 0 -0 0</pose>
+  <box>
+    <size>2 2 5</size>
+  </box>
+  <model_count>4</model_count>
+  <distribution>
+    <type>linear-y</type>
+  </distribution>
+  </population>
+
+  <population name="tree_population_y3">
+  <model name='tree_1'>
+      <static>1</static>
+      <link name='link_tree'>
+        <pose>460.0 219.0 18.3 1.5708 0.0 1.5708</pose>
+      <collision name='collision'>
+        <laser_retro>0</laser_retro>
+        <max_contacts>10</max_contacts>
+        <pose frame=''>0 0 0.5 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://tree/meshes/tree.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+        <visual name='visual'>
+          <cast_shadows>0</cast_shadows>
+          <transparency>0</transparency>
+          <geometry>
+            <mesh>
+              <uri>model://tree/meshes/tree.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+  </model>
+  <pose>0 0 0 0 -0 0</pose>
+  <box>
+    <size>2 10 5</size>
+  </box>
+  <model_count>20</model_count>
+  <distribution>
+    <type>linear-y</type>
+  </distribution>
+  </population>
+
+  <population name="tree_population_x4">
+  <model name='tree_1'>
+      <static>1</static>
+      <link name='link_tree'>
+        <pose>465.0 224.0 18.3 1.5708 0.0 1.0</pose>
+      <collision name='collision'>
+        <laser_retro>0</laser_retro>
+        <max_contacts>10</max_contacts>
+        <pose frame=''>0 0 0.5 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://tree/meshes/tree.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+        <visual name='visual'>
+          <cast_shadows>0</cast_shadows>
+          <transparency>0</transparency>
+          <geometry>
+            <mesh>
+              <uri>model://tree/meshes/tree.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+  </model>
+  <pose>0 0 0 0 -0 0</pose>
+  <box>
+    <size>10 2 5</size>
+  </box>
+  <model_count>20</model_count>
+  <distribution>
+    <type>linear-x</type>
+  </distribution>
+  </population>
+
+  <population name="tree_population_x5">
+  <model name='tree_1'>
+      <static>1</static>
+      <link name='link_tree'>
+        <pose>475.0 224.0 18.0 1.5708 0.0 2.0</pose>
+      <collision name='collision'>
+        <laser_retro>0</laser_retro>
+        <max_contacts>10</max_contacts>
+        <pose frame=''>0 0 0.5 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://tree/meshes/tree.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+        <visual name='visual'>
+          <cast_shadows>0</cast_shadows>
+          <transparency>0</transparency>
+          <geometry>
+            <mesh>
+              <uri>model://tree/meshes/tree.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+  </model>
+  <pose>0 0 0 0 -0 0</pose>
+  <box>
+    <size>10 2 5</size>
+  </box>
+  <model_count>20</model_count>
+  <distribution>
+    <type>linear-x</type>
+  </distribution>
+  </population>
+
+  <population name="tree_population_y4">
+  <model name='tree_1'>
+      <static>1</static>
+      <link name='link_tree'>
+        <pose>480.0 222.5 16.7 1.5708 0.0 3.0</pose>
+      <collision name='collision'>
+        <laser_retro>0</laser_retro>
+        <max_contacts>10</max_contacts>
+        <pose frame=''>0 0 0.5 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://tree/meshes/tree.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+        <visual name='visual'>
+          <cast_shadows>0</cast_shadows>
+          <transparency>0</transparency>
+          <geometry>
+            <mesh>
+              <uri>model://tree/meshes/tree.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+  </model>
+  <pose>0 0 0 0 -0 0</pose>
+  <box>
+    <size>2 5 5</size>
+  </box>
+  <model_count>10</model_count>
+  <distribution>
+    <type>linear-y</type>
+  </distribution>
+  </population>
+
+  <population name="tree_population_y5">
+  <model name='tree_1'>
+      <static>1</static>
+      <link name='link_tree'>
+        <pose>480.0 217.5 15.5 1.5708 0.0 0.5</pose>
+      <collision name='collision'>
+        <laser_retro>0</laser_retro>
+        <max_contacts>10</max_contacts>
+        <pose frame=''>0 0 0.5 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://tree/meshes/tree.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+        <visual name='visual'>
+          <cast_shadows>0</cast_shadows>
+          <transparency>0</transparency>
+          <geometry>
+            <mesh>
+              <uri>model://tree/meshes/tree.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+  </model>
+  <pose>0 0 0 0 -0 0</pose>
+  <box>
+    <size>2 5 5</size>
+  </box>
+  <model_count>10</model_count>
+  <distribution>
+    <type>linear-y</type>
+  </distribution>
+  </population>
+
+  </world>
+</sdf>

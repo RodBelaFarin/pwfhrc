@@ -45,23 +45,9 @@ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSI
       <arg name="kinect_enabled" default="$(arg kinect_enabled)"/>
       <arg name="urdf_extras" default="$(arg urdf_extras)"/>
     </include>
-
-    <!--group if="$(arg multimaster)">
-      <include file="$(find multimaster_launch)/launch/multimaster_gazebo_robot.launch">
-        <arg name="gazebo_interface" value="$(find husky_control)/config/gazebo_interface.yaml" />
-        <arg name="robot_namespace" value="$(arg robot_namespace)"/>
-      </include>
-
-      <- For multimaster bringup, need to load the controller config ->
-      <rosparam command="load" file="$(find husky_control)/config/control.yaml" />
-    </group-->
-
-    <!-- For single master bringup, run robot control on the gazebo master -->
-    <!--group unless="$(arg multimaster)"-->
       <include file="$(find husky_control)/launch/control.launch">
-        <!--arg name="multimaster" value="$(arg multimaster)"/-->
       </include>
-    <!--/group-->
+    </group>
 
     <group if="$(arg kinect_enabled)">
 
@@ -100,6 +86,6 @@ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSI
     <!-- Spawn robot in gazebo -->
     <node name="spawn_husky_model" pkg="gazebo_ros" type="spawn_model" args="-x $(arg x) -y $(arg y) -Y $(arg yaw) -unpause -urdf -param robot_description -model $(arg robot_namespace)" />
 
-  </group>
+  <!--/group-->
 
 </launch>
